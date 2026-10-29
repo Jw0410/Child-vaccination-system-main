@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>User Login</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="login-page">
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="/" class="logo"></a>
+
+        <div class="navigation">
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+        </div>
+    </nav>
+
+    <!-- Login form -->
+    <main class="login-container">
+
+        <h2>LOG-IN</h2>
+
+        <form method="POST" action="/login">
+
+            <div class="form-group">
+                <label for="username">Username:</label>
+
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    class="txtbox"
+                    placeholder="Enter your username"
+                    autocomplete="username"
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    class="txtbox"
+                    placeholder="Enter your password"
+                    autocomplete="current-password"
+                    required>
+            </div>
+
+            <button type="submit" class="login-btn">
+                Login
+            </button>
+
+        </form>
+
+        <p class="register-text">
+            Don't have an account?
+            <a href="/register">Register here</a>
+        </p>
+
+    </main>
+
+</body>
+</html>

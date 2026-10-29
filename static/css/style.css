@@ -1,0 +1,573 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(4, 15, 35, 0.85),
+            rgba(4, 15, 35, 0.35)
+        ),
+        url("../images/sports-car-races-through-dark-blurred-motion-generative-ai.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    display: flex;
+    flex-direction: column;
+
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.navigation {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.navigation a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 18px;
+    border-radius: 6px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navigation a:hover {
+    background-color: #ffffff;
+    color: #091ee0;
+}
+
+.hero {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 70px 8%;
+}
+
+.hero-content {
+    max-width: 750px;
+    animation: slideUp 1s ease forwards;
+}
+
+.welcome {
+    color: #85d8ff;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.15;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.description {
+    max-width: 600px;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #eeeeee;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn-primary {
+    background-color: #1769ff;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #004bd1;
+}
+
+.btn-secondary {
+    border: 2px solid #ffffff;
+    color: #ffffff;
+}
+
+.btn-secondary:hover {
+    background-color: #ffffff;
+    color: #091ee0;
+}
+
+.footer {
+    text-align: center;
+    padding: 18px;
+    font-size: 14px;
+    color: #dddddd;
+    background-color: rgba(0, 0, 0, 0.35);
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(25px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 5%;
+    }
+
+    .navigation {
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .navigation a {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .hero {
+        padding: 50px 6%;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn {
+        text-align: center;
+    }
+}
+
+
+/* =====================================
+   REGISTER PAGE STYLES
+===================================== */
+
+.register-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(4, 15, 35, 0.85),
+            rgba(4, 15, 35, 0.35)
+        ),
+        url("../images/register.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Register navigation */
+.register-page .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.register-page .logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.register-page .navigation {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.register-page .navigation a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 18px;
+    border-radius: 6px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.register-page .navigation a:hover {
+    background-color: #ffffff;
+    color: #091ee0;
+}
+
+/* Registration form container */
+.register-container {
+    width: 90%;
+    max-width: 450px;
+    margin: 45px auto;
+    padding: 30px;
+
+    background-color: rgba(4, 15, 35, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Registration heading */
+.register-container h2 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 28px;
+    color: #85d8ff;
+    letter-spacing: 2px;
+}
+
+/* Form groups */
+.register-container .form-group {
+    margin-bottom: 20px;
+}
+
+.register-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Input fields */
+.register-container .txtbox {
+    width: 100%;
+    padding: 13px;
+    font-size: 16px;
+    color: #111111;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.register-container .txtbox:focus {
+    border-color: #1769ff;
+    box-shadow: 0 0 6px rgba(23, 105, 255, 0.6);
+}
+
+/* Register button */
+.register-container .register-btn {
+    width: 100%;
+    display: block;
+    padding: 14px;
+    margin-top: 10px;
+    background-color: #1769ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.register-container .register-btn:hover {
+    background-color: #004bd1;
+    transform: translateY(-2px);
+}
+
+/* Login link */
+.register-container .login-text {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 15px;
+    color: #eeeeee;
+}
+
+.register-container .login-text a {
+    color: #85d8ff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.register-container .login-text a:hover {
+    text-decoration: underline;
+}
+
+/* Register page responsive design */
+@media (max-width: 600px) {
+    .register-page .navbar {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 5%;
+    }
+
+    .register-page .navigation {
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .register-page .navigation a {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .register-container {
+        margin: 25px auto;
+        padding: 22px;
+    }
+
+    .register-container h2 {
+        font-size: 26px;
+    }
+}
+
+
+
+/* =====================================
+   LOGIN PAGE STYLES
+===================================== */
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(4, 15, 35, 0.80),
+            rgba(4, 15, 35, 0.30)
+        ),
+        url("../images/login.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Login navigation */
+.login-page .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.login-page .logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.login-page .navigation {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.login-page .navigation a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 18px;
+    border-radius: 6px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.login-page .navigation a:hover {
+    background-color: #ffffff;
+    color: #091ee0;
+}
+
+/* Login form container */
+.login-container {
+    width: 90%;
+    max-width: 430px;
+    margin: 65px auto;
+    padding: 30px;
+
+    background-color: rgba(4, 15, 35, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Login heading */
+.login-container h2 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 28px;
+    color: #85d8ff;
+    letter-spacing: 2px;
+}
+
+/* Form fields */
+.login-container .form-group {
+    margin-bottom: 20px;
+}
+
+.login-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: left;
+}
+
+.login-container .txtbox {
+    width: 100%;
+    padding: 13px;
+    font-size: 16px;
+    color: #111111;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.login-container .txtbox:focus {
+    border-color: #1769ff;
+    box-shadow: 0 0 6px rgba(23, 105, 255, 0.6);
+}
+
+/* Login button */
+.login-container .login-btn {
+    width: 100%;
+    display: block;
+    padding: 14px;
+    margin-top: 10px;
+    background-color: #1769ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.login-container .login-btn:hover {
+    background-color: #004bd1;
+    transform: translateY(-2px);
+}
+
+/* Registration link */
+.login-container .register-text {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 15px;
+    color: #eeeeee;
+}
+
+.login-container .register-text a {
+    color: #85d8ff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.login-container .register-text a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive login page */
+@media (max-width: 600px) {
+    .login-page .navbar {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 5%;
+    }
+
+    .login-page .navigation {
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .login-page .navigation a {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .login-container {
+        margin: 30px auto;
+        padding: 22px;
+    }
+
+    .login-container h2 {
+        font-size: 26px;
+    }
+}

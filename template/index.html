@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Child Vaccination Management System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+
+<body>
+    <header class="navbar">
+        <a href="{{ url_for('index') }}" class="logo">
+            CVMS
+        </a>
+
+        <nav class="navigation">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('register') }}">Patient</a>
+            <a href="{{ url_for('admin_login') }}">Doctor</a>
+        </nav>
+    </header>
+
+    <main class="hero">
+        <div class="hero-content">
+            <p class="welcome">WELCOME TO CVMS</p>
+
+            <h1>Child Vaccination Management System</h1>
+
+            <p class="description">
+                Keeping every child protected through timely vaccinations.
+                Manage patient registration and vaccination records in one place.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="{{ url_for('register') }}" class="btn btn-primary">
+                    Patient Registration
+                </a>
+
+                <a href="{{ url_for('admin_login') }}" class="btn btn-secondary">
+                    Doctor Login
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Child Vaccination Management System</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Details</title>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='images/display_details.jpg') }}");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        form {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .txtbox {
+            width: 300px;
+            max-width: 60%;
+            font-size: 16px;
+            padding: 10px;
+        }
+
+        button, .view-link {
+            background-color: #091ee0;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 4px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        .view-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Patient Details</h2>
+
+    <form method="GET" action="{{ url_for('view') }}">
+        <input
+            type="text"
+            id="search_query"
+            class="txtbox"
+            name="search_query"
+            placeholder="Enter your search here"
+            value="{{ request.args.get('search_query', '') }}"
+            pattern="[A-Za-z0-9 ]*"
+            title="Enter letters, numbers, or spaces"
+        >
+        <button type="submit">Search</button>
+    </form>
+
+    <div class="table-container">
+        <table id="show">
+            <thead>
+                <tr>
+                    <th>Child Name</th>
+                    <th>Child Age</th>
+                    <th>Gender</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Father Name</th>
+                    <th>Child DOB</th>
+                    <th>Phone No</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for detail in patient_detail %}
+                <tr>
+                    <td>{{ detail[0] }}</td>
+                    <td>{{ detail[1] }}</td>
+                    <td>{{ detail[2] }}</td>
+
+                    <td>
+                        {{ detail[3].strftime('%d-%m-%Y') if detail[3] else '' }}
+                    </td>
+
+                    <td>{{ detail[4] }}</td>
+                    <td>{{ detail[5] }}</td>
+
+                    <td>
+                        {{ detail[6].strftime('%d-%m-%Y') if detail[6] and detail[6].strftime is defined else detail[6] or '' }}
+                    </td>
+
+                    <td>{{ detail[7] }}</td>
+                    <td>{{ detail[8] }}</td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="9">No patient details found.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="view-container">
+        <a href="{{ url_for('display_details') }}" class="view-link">
+            VIEW
+        </a>
+    </div>
+
+</body>
+</html>

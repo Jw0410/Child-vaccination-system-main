@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="register-page">
+
+    <nav class="navbar">
+        <a href="/" class="logo"></a>
+
+        <div class="navigation">
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+        </div>
+    </nav>
+
+    <main class="register-container">
+        <h2>REGISTER</h2>
+
+        <form method="POST" action="/register">
+
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text"
+                       id="username"
+                       name="username"
+                       class="txtbox"
+                       placeholder="Enter your username"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password"
+                       id="password"
+                       name="password"
+                       class="txtbox"
+                       placeholder="Enter your password"
+                       minlength="8"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="phoneno">Phone No:</label>
+                <input type="tel"
+                       id="phoneno"
+                       name="phoneno"
+                       class="txtbox"
+                       placeholder="Enter 10-digit phone number"
+                       pattern="[0-9]{10}"
+                       maxlength="10"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email"
+                       id="email"
+                       name="email"
+                       class="txtbox"
+                       placeholder="Enter your email"
+                       required>
+            </div>
+
+            <button type="submit" class="register-btn">
+                Register
+            </button>
+
+        </form>
+
+        <p class="login-text">
+            Already have an account?
+            <a href="/login">Login here</a>
+        </p>
+    </main>
+
+</body>
+</html>
